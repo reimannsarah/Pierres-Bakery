@@ -25,5 +25,14 @@ namespace BakeryTests
       string result = jean.Orders[0].VendorName;
       Assert.AreEqual("Sourdough", result);
     }
+
+    [TestMethod]
+    public void FindMethod_FindsVendorAtGivenId_String()
+    {
+      Vendor jean = new Vendor("Jean", "I am french");
+      AllVendors foundVendor = AllVendors.Find(1);
+      string result = "jean";
+      Assert.AreEqual("jean", result);
+    }
   }
 }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Bakery.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Bakery.Controllers
 {
@@ -16,6 +17,12 @@ namespace Bakery.Controllers
     public ActionResult Create()
     {
       return View();
+    }
+    [HttpPost("/vendors")]
+    public ActionResult Index(string[] vendorInput)
+    {
+      Vendor newVendor = new Vendor(vendorInput[0], vendorInput[1]);
+      return View(AllVendors.VendorList);
     }
   }
 }

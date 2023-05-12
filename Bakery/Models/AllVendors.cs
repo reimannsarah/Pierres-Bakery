@@ -13,5 +13,9 @@ namespace Bakery.Models
     {
       return VendorList[searchId - 1];
     }
+    public static void ClearAll()
+    {
+      VendorList.Clear();
+    }
   }
 }

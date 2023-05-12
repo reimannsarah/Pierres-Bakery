@@ -10,7 +10,7 @@ namespace BakeryTests
     [TestMethod]
     public void AllVendorsConstructor_CreatesInstanceOfAllVendors_AllVendors()
     {
-      Vendor jean = new Vendor();
+      Vendor jean = new Vendor("Bake With Me", "Mom and Pop Shop");
       bool expected = true;
       Assert.AreEqual(expected, jean is AllVendors);
     }

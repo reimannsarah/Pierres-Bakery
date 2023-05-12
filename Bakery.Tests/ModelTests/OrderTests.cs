@@ -36,6 +36,17 @@ namespace BakeryTests
       int result = newOrder.Cart["sourdough"];
       Assert.AreEqual(2, result);
     }
+    
+    [TestMethod]
+    public void CalculateTotalMethod_CalculatesTotalOfItemsInCart_Int()
+    {
+      string[] products = {"super sourdough rainbow swirl", "le baguette", "rye guy"};
+      int[] amounts = {2,4,5};
+      Order newOrder = new Order("Sarah's Bakery", products, amounts);
+      newOrder.CalculateTotal();
+      int result = newOrder.OrderTotal;
+      Assert.AreEqual(41, result);
+    }
   }
 
 }

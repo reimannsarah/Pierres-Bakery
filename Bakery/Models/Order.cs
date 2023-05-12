@@ -3,10 +3,11 @@ using System;
 
 namespace Bakery.Models
 {
-  public class Order
+  public class Order : Menu
   {
     public string VendorName { get; set; }
     public Dictionary<string, int> Cart = new Dictionary<string, int>() {};
+    public int OrderTotal { get; set; }
     public DateTime OrderDate { get; set; }
     public int OrderTracker { get; set; } = 0000;
     public string OrderNumber { get; set; }
@@ -19,6 +20,19 @@ namespace Bakery.Models
       for (int i = 0; i < products.Length; i ++)
       {
         Cart.Add(products[i], amounts[i]);
+      }
+    }
+    public void CalculateTotal()
+    {
+      foreach (KeyValuePair<string,int> item in Cart)
+      {
+        foreach (KeyValuePair<string,int> menuItem in MenuItems)
+        {
+          if(item.Key == menuItem.Key)
+          {
+            OrderTotal+=(item.Value * menuItem.Value);
+          }
+        }
       }
     }
   }

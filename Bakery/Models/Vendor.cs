@@ -12,6 +12,9 @@ namespace Bakery.Models
       VendorList.Add(this);
       Id = VendorList.Count;
     }
-
+      public void AddOrder(Order order)
+      {
+        Orders.Add(order);
+      }
   }
 }

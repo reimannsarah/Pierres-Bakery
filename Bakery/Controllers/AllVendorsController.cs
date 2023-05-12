@@ -18,11 +18,35 @@ namespace Bakery.Controllers
     {
       return View();
     }
+
     [HttpPost("/vendors")]
     public ActionResult Index(string[] vendorInput)
     {
       Vendor newVendor = new Vendor(vendorInput[0], vendorInput[1]);
       return View(AllVendors.VendorList);
     }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Vendor selectedVendor = AllVendors.Find(id);
+      return View(selectedVendor);
+    }
+
+    [HttpGet("/vendors/{id}/orders/new")]
+    public ActionResult Order()
+    {
+      return View();
+    }
+
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Show(int id, string orderInputVendorName, string[]type, int[]amount)
+    {
+      Order newOrder = new Order(orderInputVendorName, type, amount);
+      Vendor selectedVendor = AllVendors.Find(id);
+      // selectedVendor.AddOrder(newOrder);
+      return View();
+    }
+    
   }
 }

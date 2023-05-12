@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Bakery.Models;
+
+<a href="/vendors/{id}/orders/new">New Order</a>
+
+<a href="/vendors/@Model.Id/orders">Orders</a>
+
+@* <li>Vendor Name: @Model["vendor"].Name</li>
+<li>Description: @Model["vendor"].Description</li>
+<h4>Orders:</h4> *@
+
+@* @foreach (Order order in @Model["orders"])
+{
+@if (Model["orders"].Count == 0)
+{
+  <p>No Orders Yet</p>
+} *@
+@* <li>@order.VendorName</li>
+<li>@order.OrderTotal</li> *@
+@* @foreach (KeyValuePair<string,int> selection in order.Cart)
+  {
+  <li><span>@selection.Value </span><span>@selection.Key</span></li>
+  } *@
+@* <li>Date: @order.OrderDate</li>
+<li>Order No. @order.OrderNumber</li> *@
+@* } *@

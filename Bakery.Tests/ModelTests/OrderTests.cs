@@ -9,8 +9,16 @@ namespace BakeryTests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOrOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("Sourdough");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrderWithProperties_Int()
+    {
+      Order newOrder = new Order("Sourdough");
+      string result = "0001";
+      Assert.AreEqual(newOrder.OrderNumber, result);
     }
   }
 

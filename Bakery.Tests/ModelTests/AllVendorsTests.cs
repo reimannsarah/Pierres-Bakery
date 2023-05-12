@@ -6,6 +6,7 @@ namespace BakeryTests
 {
   [TestClass]
   public class AllVendorsTests
+
   {
     [TestMethod]
     public void AllVendorsConstructor_CreatesInstanceOfAllVendors_AllVendors()

@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Bakery.Models;
+@using System.Collections.Generic;
+
+<h1>My Vendors</h1>
+@if (Model.Count == 0 )
+{
+  <h4>You have no vendors</h4>
+}
+@foreach (Vendor vendor in Model)
+{
+  <li><a href="/vendors/@vendor.Id">@vendor.Name</a></li>
+}

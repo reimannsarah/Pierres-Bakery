@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Bakery.Models;
+
+<h4>Vendor Profile: @Model.Name</h4>
+
+<a href="/vendors/@Model.Id/orders/new">New Order</a>
+
+<a href="/vendors/@Model.Id/orders">Orders</a>
+

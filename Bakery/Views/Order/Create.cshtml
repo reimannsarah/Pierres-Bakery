@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Bakery.Models;
+
+<h3>Order NO. @Model["order"].OrderNumber</h3>
+<h5>Vendor Name: @Model["order"].VendorName</h5>
+<p>@Model["cart"].Count</p>
+
+@* @foreach (KeyValuePair<string,int> item in @Model["cart"])
+  {
+    <li>@item.Key </li>
+  } *@
+  <li>Total: @Model["order"].OrderTotal</li>
+  <li>Date: @Model["order"].OrderDate</li>

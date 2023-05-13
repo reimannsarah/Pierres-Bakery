@@ -5,7 +5,7 @@ using System;
 
 namespace Bakery.Controllers
 {
-  public class AllVendorsController : Controller
+  public class VendorController : Controller
   {
     [HttpGet("/vendors")]
     public ActionResult Index()
@@ -14,7 +14,7 @@ namespace Bakery.Controllers
     }
 
     [HttpGet("/vendors/new")]
-    public ActionResult Create()
+    public ActionResult New()
     {
       return View();
     }
@@ -33,20 +33,14 @@ namespace Bakery.Controllers
       return View(selectedVendor);
     }
 
-    [HttpGet("/vendors/{id}/orders/new")]
-    public ActionResult Order()
-    {
-      return View();
-    }
-
-    [HttpPost("/vendors/{id}")]
-    public ActionResult Show(int id, string orderInputVendorName, string[]type, int[]amount)
-    {
-      Order newOrder = new Order(orderInputVendorName, type, amount);
-      Vendor selectedVendor = AllVendors.Find(id);
-      // selectedVendor.AddOrder(newOrder);
-      return View();
-    }
+    // [HttpPost("/vendors/{id}")]
+    // public ActionResult Show(int id, string orderInputVendorName, string[]type, int[]amount)
+    // {
+    //   Order newOrder = new Order(orderInputVendorName, type, amount);
+    //   Vendor selectedVendor = AllVendors.Find(id);
+    //   selectedVendor.AddOrder(newOrder);
+    //   return View();
+    // }
     
   }
 }

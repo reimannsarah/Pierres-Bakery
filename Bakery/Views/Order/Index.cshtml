@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Bakery.Models;
+
+<h3>Orders</h3>
+<h5>Vendor Name: @Model["vendor"].Name</h5>
+
+@if (@Model["orders"].Count == 0)
+{
+  <p>No orders yet</p>
+}
+
+@foreach (Order order in @Model["orders"])
+{
+  <li>@order.OrderTotal</li>
+  <li>@order.OrderDate</li>
+  <li>@order.OrderNumber</li>
+}

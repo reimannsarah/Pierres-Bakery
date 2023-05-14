@@ -5,7 +5,7 @@
 @using Bakery.Models;
 
 <h3>Orders</h3>
-<h5>Vendor Name: @Model["vendor"].Name</h5>
+<h5>Vendor Name:  <a href='@Html.Raw("/vendors/" + $"{Model["vendor"].Id}")'>@Model["vendor"].Name</a></h5>
 
 @if (@Model["orders"].Count == 0)
 {
@@ -14,7 +14,7 @@
 
 @foreach (Order order in @Model["orders"])
 {
-  <li>@order.OrderTotal</li>
-  <li>@order.OrderDate</li>
-  <li>@order.OrderNumber</li>
+  <li>Total: $@order.OrderTotal</li>
+  <li>Date: @order.OrderDate</li>
+  <li> Order No. @order.OrderNumber</li>
 }

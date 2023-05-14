@@ -9,7 +9,7 @@ namespace Bakery.Models
     public Dictionary<string, int> Cart = new Dictionary<string, int>() {};
     public int OrderTotal { get; set; }
     public DateTime OrderDate { get; set; }
-    public int OrderTracker { get; set; } = 0000;
+    public static int OrderTracker { get; set; } = 0000;
     public string OrderNumber { get; set; }
     public Order(string vendorName, string[] products, int[] amounts)
     {
@@ -21,6 +21,10 @@ namespace Bakery.Models
       {
         Cart.Add(products[i], amounts[i]);
       }
+    }
+    public static void ResetTracker()
+    {
+      OrderTracker = 0000;
     }
     public void CalculateTotal()
     {

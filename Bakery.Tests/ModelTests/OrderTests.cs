@@ -6,8 +6,12 @@ using System;
 namespace BakeryTests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ResetTracker();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOrOrder_Order()
     {

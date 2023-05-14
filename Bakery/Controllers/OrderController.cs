@@ -33,8 +33,8 @@ namespace Bakery.Controllers
       Dictionary<string,int> cart = newOrder.Cart;
       model.Add("order",newOrder);
       model.Add("cart", cart);
+      model.Add("vendor", selectedVendor);
       return View(model);
-
     }
   }
 }
